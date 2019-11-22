@@ -69,8 +69,15 @@ void loop(){
       pos = 180 - y;
      }
      */
-     myPID.Compute();
-     pos = 90 + Output;
+     if(y >180)
+     {
+      y = y/2;
+      y = 0 - y;
+     }
+     //myPID.Compute();
+     //pos = 90 + Output;
+     pos = y / 4;
+     pos = 90 + pos;
      servo.write(pos);
      
 }
